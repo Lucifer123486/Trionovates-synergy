@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type.js Animation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="animated-text"></h1>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+        var typed = new Typed("#animated-text", {
+            strings: ["Welcome to Trinovate Synergy!", "Fast & Furious Robo Race!", "Circuit Mania Awaits!", "Battle of Wits Begins!"],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1000,
+            startDelay: 500,
+            loop: true
+        });
+    </script>
+    
+</body>
+</html>

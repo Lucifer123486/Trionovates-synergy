@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            color: #ffffff;
+            text-shadow: 0 0 25px #b9adc2;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            /* Enable smooth scrolling */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #800be6;
+            background: rgba(0, 0, 0, 0.177);
+            backdrop-filter: blur(10px);
+        }
+        header h2{
+            margin-top: 20px;
+        }
+        .title{
+            display: flex;
+            
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: #800be6;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            margin-right: 80px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            padding: 12px 18px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #280348 0%, #5f08aa 100%);
+            border: 2px solid #800be6;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #3b056b94;
+            color: #9d98a1;
+        }
+        .footer {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.396);
+            border-top: 3px solid #800be6;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                flex-direction: column; /* Stack footer items vertically on smaller screens */
+                align-items: center; /* Center align footer items */
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+                margin-right: 50px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.642);
+                backdrop-filter: blur(10px);
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 15px;
+                width: 70%;
+                margin-right: 40px;
+                margin-left: 30px;
+            }
+
+            .nav-active {
+                display: flex;
+            }
+        }
+        footer .itsapart{
+    display: flex;
+    justify-content: space-around;
+}
+.organizers{
+    display: flex;
+    justify-content: space-around;
+}
+.itsapart{
+    display: flex;
+    justify-content: space-around;
+}
+.taepart{
+    display: flex;
+    justify-content: space-around;
+}
+.taepart p{
+    display: flex;
+    padding-left: 50px;
+}
+.itsapart p{
+    margin-right: 10px;
+    padding-top: 7px;
+}
+.line{
+    height: 70px;
+    width: 1px;
+    background-color: white;
+    margin-left: 17px;
+    margin-right: 5px;
+}
+.footer2 p{
+    margin-left: -50px;
+}
+.org{
+    display: flex;
+    margin-left: 136px;
+}
+
+
+
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding-top: 10px;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+        }
+        .hero {
+            text-align: center;
+            margin-top: 150px;
+            margin-bottom: -80px;
+        }
+        .glitch {
+            font-size: 4rem;
+            font-weight: bold;
+            position: relative;
+            color: #ffffff;
+            text-transform: uppercase;
+            animation: glitch 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% { text-shadow: 5px 5px 0 #ff00ff, -5px -5px 0 #00ffff; }
+            50% { text-shadow: -5px -5px 0 #ff00ff, 5px 5px 0 #00ffff; }
+            100% { text-shadow: 5px 5px 0 #ff00ff, -5px -5px 0 #00ffff; }
+        }
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 80px auto;
+            padding: 20px;
+            max-width: 1000px;
+        }
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .text, .image-card {
+            flex: 1;
+            padding: 20px;
+        }
+        .text p {
+            font-size: 1rem;
+            text-align: justify;
+            font-family: "Tomorrow", serif;
+        }
+        .register-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #280348 0%, #5f08aa 100%);
+            border: 2px solid #800be6;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .register-btn:hover {
+            background: #3b056b94;
+        }
+        .image-card img {
+            width: 120%;
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .section {
+                flex-direction: column !important;
+                text-align: center;
+            }
+        }
+
+        :root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+* {
+  box-sizing: border-box;
+}
+.cardarea {
+  
+  margin: 0;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 36px;
+  perspective: 2500px;
+  margin: 0 50px;
+}
+
+.cover-image {
+  
+  height: 100%;
+  object-fit: cover;
+  
+}
+
+.wrapper {
+  transition: all 0.5s;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+
+.card:hover .wrapper {
+  transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+  box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  opacity: 0;
+  width: 100%;
+  height: 80px;
+  transition: all 0.5s;
+  position: absolute;
+  left: 0;
+}
+.wrapper::before {
+  top: 0;
+  height: 100%;
+  background-image: linear-gradient(
+    to top,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+.wrapper::after {
+  bottom: 0;
+  opacity: 1;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 46%,
+    rgba(12, 13, 19, 0.5) 68%,
+    rgba(12, 13, 19) 97%
+  );
+}
+
+.card:hover .wrapper::before,
+.wrapper::after {
+  opacity: 1;
+}
+
+.card:hover .wrapper::after {
+  height: 120px;
+}
+.title {
+  width: 100%;
+  transition: transform 0.5s;
+}
+.card:hover .title {
+  transform: translate3d(0%, -50px, 100px);
+}
+
+.character {
+  width: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  position: absolute;
+  z-index: -1;
+}
+
+.card:hover .character {
+  opacity: 1;
+  box-shadow: #191c29;
+  transform: translate3d(0%, -30%, 100px);
+}
+        .register-btn1 {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 20px;
+            width: 170px;
+            margin-bottom: 100px;
+            margin-top: -50px;
+            background: linear-gradient(135deg, #280348 0%, #5f08aa 100%);
+            border: 2px solid #800be6;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .register-btn1:hover {
+            background: #3b056b94;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <img src="trinovate logo.png" height="70px" width="70px">
+            <h2>Trinovate Synergy 1.0</h2>
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <nav class="nav-links">
+            <a href="trinovateBeta.html" class="register-btn">Back</a>
+         
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <h1 class="glitch">Equinox</h1>
+        </div>
+    
+        <div class="section">
+            <div class="text">
+                <h2>Havoc [BGMI Tournament]</h2>
+                <p>Get ready for an adrenaline-fueled battleground where only the best survive! Brace yourself for an action-packed BGMI tournament, where sharp reflexes, strategic gameplay, and fearless combat will determine the ultimate champion.                    .</p>
+                <p>Registration fee : 200/- per squad</p>
+                <p>Date: 12 April</p>
+                <p>First round : Custom match</p>
+                <p>Final round : Custom match</p>
+                <p>Prize pool : 5000/-</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSds1vwcIbLrhgeq7hEdRPirqndoh6bCAZVRTwZRzGdITKFEbw/viewform" target="_blank" class="register-btn">Register [ BGMI ] </a>
+
+            </div>
+
+            <div class="cardarea">
+
+                <div class="image-card">
+                        <div class="card">
+                          <div class="wrapper">
+                            <img src="bgmiback.png" class="cover-image"  />
+                          </div>
+                          <img src="bgmicard1-removebg-preview1.png" class="title" />
+                          <img src="bgmicard1-removebg-preview.png" class="character" />
+                        </div>
+                      </a>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="text">
+                <h2>Shape and Showcase [Model making]</h2>
+                <p>Build, Innovate, Dominate! Create stunning models using ice cream sticks, skewers, paper cups, cardboard, and more, testing your creativity and engineering skills. With big prizes and intense challenges, it's time to bring your ideas to life! .</p>
+                <p>Only for First year students</p>
+                <p>Date: 11 April</p>
+                <p>Entry limit of 30 Registrations per criteria</p>
+                <p>Registration fee : 49/- per duo</p>
+                <p>First Category : Build a bridge and test its mechanical strength</p>
+                <p>Second Category : Build a structure to test floating capacity</p>
+                <p>Prize pool: 6000/-</p>
+            </div>
+            <div class="cardarea">
+
+                <div class="image-card">
+                        <div class="card">
+                          <div class="wrapper">
+                            <img src="bridgeback.png" class="cover-image" />
+                          </div>
+                          
+                          <img src="bridgehover-removebg-preview.png" class="character" />
+                        </div>
+                      </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text">
+                <h2>Battle of wits [Debate competition]</h2>
+                <p>Speak, Argue, Conquer! Engage in a fierce debate showdown where logic, persuasion, and quick thinking take center stage. With thought-provoking topics and intense rebuttals, this is the ultimate test of intellect and articulation. Sharp arguments and bold opinions will lead the way to victory!</p>
+                <p>Registration fee : 49/- per person</p>
+                <p>Date: 11 April</p>
+                <p>Prize pool: 6000/-</p>
+                <p><b>Rules:</b><br>Only for First year students</p>
+                <p>Group of 5 people will be formed on the spot.</p>
+                <p>Debate will be held between 2 groups</p>
+                <p>Each participant will get 1 min to express opinion</p>
+                <p>English only (other languages not allowed)</p>
+            </div>
+            <div class="cardarea">
+
+                <div class="image-card">
+                        <div class="card">
+                          <div class="wrapper">
+                            <img src="debateback.png" class="cover-image" />
+                          </div>
+                          <img src="debatehover-removebg-preview.png" class="character" />
+                        </div>
+                      </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text">
+                <h2>Circuit Mania [Solving circuit]</h2>
+                <p>Design, Build, Electrify! Put your electronics skills to the test by designing and building circuits under pressure. With challenging tasks and high-voltage excitement, precision and creativity lead to victory! </p>
+                <p>Registration fee : 49/- per duo</p>
+                <p>Date: 11 April</p>
+                <p>Prize pool: 6000/-</p>
+                <p><b>Rules:</b><br>2 rounds will be there Elimination round & final round</p>
+                <p>Only for first year students (team size is 2) </p>
+                <p>Time limit will be 15 min. </p>
+                <p>Circuit diagram and components will be provided and contestants should prepare a circuit accordingly. </p>
+                <p>If a draw occurs, a Rapid Fire Round will be conducted.</p>
+                <p>No mobile phones allowed.</p>
+            </div>
+            <div class="cardarea">
+
+                <div class="image-card">
+                        <div class="card">
+                          <div class="wrapper">
+                            <img src="circuitback.png" class="cover-image" />
+                          </div>
+                          <img src="circuithover-removebg-preview.png" class="character" />
+                        </div>
+                      </a>
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h2>Fast & Furious [Robo/RC car race]</h2>
+                <p>Speed, Control, Conquer! Take the wheel of your RC robo-car and race through thrilling tracks with precision and speed. With sharp turns, high-speed drifts, and intense competition, only the fastest and smartest will dominate the track!</p>
+                <p>Registration fee : 49/- per person</p>
+                <p>Date: 12 April</p>
+                <p><b>Rules:</b><br>Only for First year students</p>
+                <p>Only 1 person can participate</p>
+                <p>Participants must bring their own Rc cars</p>
+                <p>100m wireless track </p>
+            </div>
+            <div class="cardarea">
+
+                <div class="image-card">
+                        <div class="card">
+                          <div class="wrapper">
+                            <img src="roboback.png" class="cover-image" />
+                          </div>
+                          <img src="robohover-removebg-preview.png" class="character" />
+                        </div>
+                      </a>
+                </div>
+
+            </div>
+        </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfkNbiKHZkgRNUNBbU3nfMV0t8yFwUvqbo5UkFdDoWEyztBqg/viewform" target="_blank" class="register-btn1">Register </a>
+        
+    </main>
+    <footer class="footer">
+        <div class="footer1">
+            <p>Follow us on Social Media</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/trinovate_synergy1.0/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/school/trinity-academy-of-engineering/posts/?feedView=all" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn"></a>
+            </div>
+            <p>&copy; 2025 Trinovate Synergy 1.0. All rights reserved.</p>
+            <p>Designed & Developed by <a href="https://www.linkedin.com/in/mayur-patil-1451ba2b1/" target="_blank">Mayur Patil</a></p>
+        </div>
+        <div class="footer2">
+            <div class="org">
+                <p>Organized by</p>
+            </div>
+            <div class="organizers">
+                <div class="itsapart">
+                    <p>ITSA TAE </p>
+                    <a href="https://www.instagram.com/itsa.tae/" target="_blank"><img src="itsa.png" alt="ITSA logo" height="80px" width="80px"></a>
+                </div>
+                <div class="line"></div>
+                <div class="taepart">
+                    <a href="https://www.instagram.com/trinityacademy_pune/" target="_blank"><img src="taelogo-removebg-preview.png" alt="TAE logo" height="80px" width="80px"></a>
+                    <p>Trinity Academy of<br>Engineering, Pune</p>
+                </div>
+            </div>  
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('nav-active');
+        }
+        function smoothScroll(e) {
+    e.preventDefault();
+    
+    // Get the target element id from the href
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    
+    if (targetElement) {
+        // Get header height for offset
+        const headerHeight = document.querySelector('header').offsetHeight;
+        
+        // Calculate the target position with offset
+        const targetPosition = targetElement.offsetTop - headerHeight+100;
+        
+        // Smooth scroll to target
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+        
+        // If mobile menu is open, close it after clicking
+        const navLinks = document.querySelector('.nav-links');
+        if (navLinks.classList.contains('nav-active')) {
+            navLinks.classList.remove('nav-active');
+        }
+    }
+}
+
+// Add event listeners to all navigation links
+document.addEventListener('DOMContentLoaded', function() {
+    const links = document.querySelectorAll('.nav-links a[href^="#"]');
+    links.forEach(link => {
+        link.addEventListener('click', smoothScroll);
+    });
+});
+    </script>
+</body>
+</html>
