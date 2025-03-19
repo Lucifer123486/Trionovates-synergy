@@ -32,9 +32,7 @@
         }
 
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            
             padding: 20px 50px;
             position: fixed;
             width: 100%;
@@ -47,6 +45,11 @@
         }
         header h2{
             margin-top: 20px;
+        }
+        .header1{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .title{
             display: flex;
@@ -440,12 +443,30 @@
     font-family: "Tomorrow", serif;
 }
 
+
 .contact-card {
     background: #48097567;
     border: 3px solid #800be6;
     border-radius: 15px;
     padding: 20px;
     text-align: left;
+}
+.contact-card1 {
+    background: #48097567;
+    border: 3px solid #800be6;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    text-wrap: wrap;
+}
+
+.contact-cards1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: "Tomorrow", serif;
 }
 
 .contact-card h3 {
@@ -747,23 +768,44 @@ footer .itsapart{
         display: flex;
         justify-content: center;
     }
+    .taeref{
+        color: white;
+        text-decoration: none;
+    }
+    .taeheader{
+        display: flex;
+        justify-content: center;
+        font-family: 'Times New Roman', Times, serif;
+        padding-bottom: 20px;
+    }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="title">
-            <img src="trinovate logo.png" height="70px" width="70px">
-            <h2>Trinovate Synergy 1.0</h2>
+        <div class="taeheader">
+           
+            <div class="taetext">
+                <h1>KJEI's Trinity Academy of Engineering, Pune</h1>
+            </div>
+            
         </div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <nav class="nav-links">
-            <a href="#hero">Home</a>
-            <a href="#details">Details</a>
-            <a href="#events">Events</a>
-            <a href="#prizes">Themes</a>
-            <a href="#help-support">Help & Support</a>
-        </nav>
+        <div class="header1">
+            <div class="title">    
+                <img src="trinovate logo.png" height="70px" width="70px">
+                <h2>Trinovate Synergy 1.0</h2>
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#details">Details</a>
+                <a href="#events">Events</a>
+                <a href="#prizes">Themes</a>
+                <a href="#help-support">Help & Support</a>
+                
+            </nav>
+        </div>
+        
     </header>
     
     <section class="hero" id="hero">
@@ -831,19 +873,46 @@ footer .itsapart{
         <br>
         <br>
         <div class="themes">
-            <div class="backcard">
-                <p>1. Innovation in natural resource-based industries</p>
-                <p>2. Minimization of rural urban disparity</p>
-                <p>3. Environment protection from man-made hazards</p>
-                <p>4. Health-care system using modenr technology</p>
-                <p>5. Smart cities& smart villages</p>
+            <div class="contact-cards">
+                <div class="contact-card1">
+                    <img src="naturalindustries.jpg" height="150px" width="150px" alt="">
+                    <h3>1. Innovation in natural resource-based industries</h3>
+                    
+                </div>
+                <div class="contact-card1">
+                    <img src="ruralurban.jpg" height="150px" width="150px" alt="">
+                    <h3>2. Minimization of rural urban disparity</h3>
+                    
+                </div>
+                <div class="contact-card1">
+                    <img src="stock-vector-technological-disasters-abstract-concept-vector-illustration-chemical-industry-disaster-2075814178.jpg" height="150px" width="150px" alt="">
+                    <h3>3. Environment protection from man-made hazards</h3>
+                    
+                </div>
+                <div class="contact-card1">
+                    <img src="The-Future-of-Healthcare-scaled-1.jpg" height="150px" width="150px" alt="">
+                    <h3>4. Health-care system using modern technology</h3>
+                    
+                </div>
+                <div class="contact-card1">
+                    <img src="smartcity.png" height="150px" width="150px" alt="">
+                    <h3>5. Smart cities& smart villages</h3>
+                    
+                </div>
             </div>
+            
         </div>
         
     </section>
     <section class="help-support" id="help-support">
         <h2>Help & Support</h2>
         <div class="contact-cards">
+            <div class="contact-card">
+                <h3>Faculty Advisor</h3>
+                <p><b>Name:</b> Mrs. Pratima Patil</p>
+                <p><b>Designation:</b> HOD IT Department</p>
+                <p><b>Phone:</b> +91 8605796829</p>
+            </div>
             <div class="contact-card">
                 <h3>Event Co-ordinator</h3>
                 <p><b>Name:</b> Vidhi Mittal</p>
@@ -887,6 +956,8 @@ footer .itsapart{
                     <p>Trinity Academy of<br>Engineering, Pune</p>
                 </div>
             </div>  
+            <a href="https://www.kjei.edu.in/tae/" class="taeref">www.trinityacademypune.com</a>
+
         </div>
     </footer>
 
